@@ -8,7 +8,7 @@ const Product = ({ setRoute, data: product }: any) => {
     <div>
       {loading && <div>Loading....</div>}
       {message && <p>{message}</p>}
-      <div onClick={() => setRoute({ route: "home" })}>Retour</div>
+      <div id="return" onClick={() => setRoute({ route: "home" })}>Retour</div>
       <div>
         <div>
           <img src={product.image} alt="" />
@@ -23,7 +23,7 @@ const Product = ({ setRoute, data: product }: any) => {
         onChange={(e) => setQuantity(Number(e.target.value))}
         placeholder="Quantité à ajouter"
       />
-      <button onClick={addProduct}>Ajouter au panier</button>
+      <button id="add" onClick={addProduct}>Ajouter au panier</button>
     </div>
   );
 };
