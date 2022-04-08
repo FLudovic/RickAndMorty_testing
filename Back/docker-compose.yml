@@ -1,4 +1,5 @@
-version: "3.8"
+# Change to 3 to run on my ubuntu 2020
+version: "3"
 services:
   # PHP service
   app:

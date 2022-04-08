@@ -32,7 +32,7 @@ const server = setupServer(
                         }
                 ]}))}),
     // remove
-    );
+);
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
@@ -48,4 +48,3 @@ afterAll(() => server.close());
         const {products} = result.current;
         console.log(products);
     })
-
