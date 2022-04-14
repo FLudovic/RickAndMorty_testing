@@ -28,6 +28,7 @@ jobs:
       - name: CD to Back project and install dependancies
         run: |
           cd Back
+          docker-compose build
           docker-compose up -d
           docker-compose exec app bash
           composer install
