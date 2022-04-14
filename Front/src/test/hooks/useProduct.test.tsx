@@ -3,6 +3,8 @@ import {setupServer} from "msw/node";
 import { renderHook, act } from '@testing-library/react-hooks'
 import useProduct from "../../hooks/useProduct";
 
+jest.setTimeout(800000);
+
 const server = setupServer(
     rest.get(
         "http://localhost:8000/api/cart/5",
@@ -31,7 +33,7 @@ afterAll(() => server.close());
         const { loading, addProduct } = result.current;
         expect(loading).toEqual(false);
         await act(async () => {
-        await addProduct();
+            await addProduct();
         }); 
         const { message } = result.current;
     });
