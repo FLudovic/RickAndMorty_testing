@@ -31,7 +31,6 @@ const server = setupServer(
                             image: 'https://rickandmortyapi.com/api/character/avatar/15.jpeg'
                         }
                 ]}))}),
-    // remove
 );
 
 beforeAll(() => server.listen());

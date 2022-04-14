@@ -14,14 +14,12 @@ const server = setupServer(
     // remove
 );
 
-jest.useRealTimers();
-
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
     test("load product", async () => {
-        jest.setTimeout(10000); // Add extra time for this test
+        jest.setTimeout(60000); // Add extra time for this test
         const product = {
             "id":5,
             "name":"Jerry Smith",
