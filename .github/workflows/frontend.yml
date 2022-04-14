@@ -28,10 +28,10 @@ jobs:
       # Runs custom steps
       - name: CD to Front project and install dependancies
         run: |
-          cd Front,
+          cd Front
           npm install
 
       - name: CD to front project and run tests
         run: |
-          cd Front,
+          cd Front
           npm run test
