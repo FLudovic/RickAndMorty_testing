@@ -4,7 +4,7 @@ import { renderHook, act } from "@testing-library/react-hooks";
 import useProduct from "../../hooks/useProduct";
 
 const server = setupServer(
-  rest.post("http://localhost:8000/api/cart/2", (req, res, ctx) => {
+  rest.post("http://localhost:8000/api/cart/5", (req, res, ctx) => {
     return res(
       ctx.json({"error":"too many"})
     );
@@ -15,15 +15,15 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-test("Load product", async () => {
+test("load product", async () => {
   const { result } = renderHook(() =>
-    useProduct({
-      id: 2,
-      name: "Rick Sanchez",
-      price: "9,99",
-      quantity: 0,
-      image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-    })
+    useProduct(                        {
+        "id":5,
+        "name":"Jerry Smith",
+        "price":"8",
+        "quantity":30,
+        "image":"https:\/\/rickandmortyapi.com\/api\/character\/avatar\/5.jpeg"
+     })
   );
   const { loading, addProduct } = result.current;
   expect(loading).toEqual(false);
