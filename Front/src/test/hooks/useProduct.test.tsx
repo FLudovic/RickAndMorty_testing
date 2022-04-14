@@ -3,7 +3,7 @@ import {setupServer} from "msw/node";
 import { renderHook, act } from '@testing-library/react-hooks'
 import useProduct from "../../hooks/useProduct";
 
-jest.setTimeout(800000);
+jest.setTimeout(80000);
 
 const server = setupServer(
     rest.get(
