@@ -14,6 +14,8 @@ const server = setupServer(
     // remove
 );
 
+jest.useRealTimers();
+
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
