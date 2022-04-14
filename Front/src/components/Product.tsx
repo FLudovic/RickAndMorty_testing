@@ -7,13 +7,13 @@ const Product = ({ setRoute, data: product }: any) => {
   return (
     <div>
       {loading && <div>Loading....</div>}
-      {message && <p>{message}</p>}
+      {message && <p id="saveSuccess">{message}</p>}
       <div id="return" onClick={() => setRoute({ route: "home" })}>Retour</div>
       <div>
         <div>
           <img src={product.image} alt="" />
           <p>Figurine de {product.name}</p>
-          <p>Quantitée {product.quantity}</p>
+          <p id="productQuantity">Quantitée {product.quantity}</p>
         </div>
       </div>
       <hr />
