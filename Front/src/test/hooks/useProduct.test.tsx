@@ -27,7 +27,7 @@ afterAll(() => server.close());
             "name":"Jerry Smith",
             "price":"8",
             "quantity":30,
-            "image":"https:\/\/rickandmortyapi.com\/api\/character\/avatar\/5.jpeg"
+            "image":"https://rickandmortyapi.com/api/character/avatar/5.jpeg"
         } 
         const {result} = renderHook(() => useProduct(product));
         const {loading, addProduct} = result.current;
