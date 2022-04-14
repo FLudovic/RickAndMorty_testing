@@ -3,14 +3,14 @@ import {setupServer} from "msw/node";
 import { renderHook, act } from '@testing-library/react-hooks'
 import useProduct from "../../hooks/useProduct";
 
-jest.setTimeout(80000);
+//jest.setTimeout(80000);
 
 const server = setupServer(
     rest.get(
         "http://localhost:8000/api/cart/5",
         (req, res, ctx) => {
             return res(
-                ctx.json({ id: 1 })
+                ctx.json({"error":"too many"})
         )}
     ),
     // remove
