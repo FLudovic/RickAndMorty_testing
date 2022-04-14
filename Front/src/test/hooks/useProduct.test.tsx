@@ -21,15 +21,14 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
     test("load product", async () => {
-        const { result } = renderHook(() =>
-        useProduct({
+        const product = {
             "id":5,
             "name":"Jerry Smith",
             "price":"8",
             "quantity":30,
             "image":"https://rickandmortyapi.com/api/character/avatar/5.jpeg"
-        })
-        );
+        }
+        const { result } = renderHook(() => useProduct(product));
         const { loading, addProduct } = result.current;
         expect(loading).toEqual(false);
         await act(async () => {
