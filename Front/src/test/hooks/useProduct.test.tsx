@@ -18,7 +18,7 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-    test("load home", async () => {
+    test("load product", async () => {
         const product = {
             "id":5,
             "name":"Jerry Smith",
@@ -33,5 +33,4 @@ afterAll(() => server.close());
             await addProduct()
         });
         const {message} = result.current;
-        console.log(message);
     })

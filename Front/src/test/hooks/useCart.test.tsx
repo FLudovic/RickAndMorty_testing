@@ -46,5 +46,4 @@ afterAll(() => server.close());
             await loadCart()
         });
         const {products} = result.current;
-        console.log(products);
     })
