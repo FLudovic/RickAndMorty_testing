@@ -49,7 +49,6 @@ const server = setupServer(
             })
         )}
     ),
-    // remove
 );
 
 beforeAll(() => server.listen());

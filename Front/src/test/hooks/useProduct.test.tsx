@@ -16,6 +16,7 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 test("load product", async () => {
+    // Mock
     const product = {
         "id":5,
         "name":"Jerry Smith",
