@@ -15,35 +15,35 @@ const server = setupServer(
                            "name":"Rick Sanchez",
                            "price":"16.50",
                            "quantity":70,
-                           "image":"https:\/\/rickandmortyapi.com\/api\/character\/avatar\/1.jpeg"
+                           "image":"https://rickandmortyapi.com/api/character/avatar/1.jpeg"
                         },
                         {
                            "id":2,
                            "name":"Morty Smith",
                            "price":"15",
                            "quantity":2,
-                           "image":"https:\/\/rickandmortyapi.com\/api\/character\/avatar\/2.jpeg"
+                           "image":"https://rickandmortyapi.com/api/character/avatar/2.jpeg"
                         },
                         {
                            "id":3,
                            "name":"Summer Smith",
                            "price":"16.50",
                            "quantity":20,
-                           "image":"https:\/\/rickandmortyapi.com\/api\/character\/avatar\/3.jpeg"
+                           "image":"https://rickandmortyapi.com/api/character/avatar/3.jpeg"
                         },
                         {
                            "id":4,
                            "name":"Beth Smith",
                            "price":"16.50",
                            "quantity":70,
-                           "image":"https:\/\/rickandmortyapi.com\/api\/character\/avatar\/4.jpeg"
+                           "image":"https://rickandmortyapi.com/api/character/avatar/4.jpeg"
                         },
                         {
                            "id":5,
                            "name":"Jerry Smith",
                            "price":"8",
                            "quantity":30,
-                           "image":"https:\/\/rickandmortyapi.com\/api\/character\/avatar\/5.jpeg"
+                           "image":"https://rickandmortyapi.com/api/character/avatar/5.jpeg"
                         }
                     ]
             })

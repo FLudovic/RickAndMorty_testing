@@ -6,7 +6,7 @@ import useProduct from "../../hooks/useProduct";
 const server = setupServer(
   rest.post("http://localhost:8000/api/cart/5", (req, res, ctx) => {
     return res(
-      ctx.json({"error":"too many"})
+      ctx.json({id:5})
     );
   })
 );
@@ -22,7 +22,7 @@ test("load product", async () => {
         "name":"Jerry Smith",
         "price":"8",
         "quantity":30,
-        "image":"https:\/\/rickandmortyapi.com\/api\/character\/avatar\/5.jpeg"
+        "image":"https://rickandmortyapi.com/api/character/avatar/5.jpeg"
      })
   );
   const { loading, addProduct } = result.current;
