@@ -19,18 +19,19 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
     test("load product", async () => {
-        jest.setTimeout(60000); // Add extra time for this test
-        const {result} = renderHook(() => useProduct({
+        const { result } = renderHook(() =>
+        useProduct({
             "id":5,
             "name":"Jerry Smith",
             "price":"8",
             "quantity":30,
             "image":"https://rickandmortyapi.com/api/character/avatar/5.jpeg"
-        } ));
-        const {loading, addProduct} = result.current;
+        })
+        );
+        const { loading, addProduct } = result.current;
         expect(loading).toEqual(false);
         await act(async () => {
-            await addProduct()
-        });
-        const {message} = result.current;
-    })
+        await addProduct();
+        }); 
+        const { message } = result.current;
+    });
