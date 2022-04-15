@@ -3,6 +3,9 @@
 namespace App\Tests;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+// Import models to test them
+use App\Model\RickAndMortyModel;
+use App\Service\CreateRickAndMorty;
 
 class ApiTest extends WebTestCase {
     
