@@ -1,6 +1,14 @@
+# This is a basic workflow to help you get started with Actions
+
 name: backend.yml
 
-on: [push]
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build-test:
@@ -22,7 +30,7 @@ jobs:
         run: |
           cd Back
           docker-compose exec -T app bash
-          composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+          composer install
       - name: Migration env=test
         run: |
           cd Back
