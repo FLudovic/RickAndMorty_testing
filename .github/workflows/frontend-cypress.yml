@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
   steps:
     - name: Checkout
-  uses: actions/checkout@v3
+  uses: actions/checkout@v2
     - name: Run blog test
   uses: cypress-io/github-action@v2
     with:
@@ -28,5 +28,5 @@ jobs:
         cd Front
         npm install
         npm start
-        wait-on: 'http://localhost:3000'
-        config: baseUrl=https://localhost:3000
+      wait-on: 'http://localhost:3000'
+      config: baseUrl=https://localhost:3000
