@@ -31,10 +31,5 @@ jobs:
           apt-get update && apt-get install -y --no-install-recommends apt-utils
           docker-compose build
           docker-compose up -d
-          docker-compose exec app bash
-          composer install
-
-      - name: CD to Back project and run tests
-        run: |
-          cd Back
-          php bin/phpunit
+          docker-compose exec -T container pwd && composer install && php bin/phpunit
+          
