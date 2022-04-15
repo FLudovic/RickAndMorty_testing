@@ -3,6 +3,7 @@
 namespace App\Tests;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use PHPUnit\Framework\TestCase;
 // Import models to test them
 use App\Model\RickAndMortyModel;
 use App\Service\CreateRickAndMorty;
