@@ -1,17 +1,32 @@
-name: Cypress tests
-    on: [push]
-    jobs:
-      cypress-run:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v3
-          - name: Run blog test
-            uses: cypress-io/github-action@v2
-            with:
-            start: | 
-                cd Front
-                npm install
-                npm start
-              wait-on: 'http://localhost:3000'
-              config: baseUrl=https://localhost:3000
+# This is a basic workflow to help you get started with Actions
+
+name: frontend-cypress.yml
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  cypress-run:
+    runs-on: ubuntu-latest
+  steps:
+    - name: Checkout
+  uses: actions/checkout@v3
+    - name: Run blog test
+  uses: cypress-io/github-action@v2
+    with:
+      start: | 
+        cd Front
+        npm install
+        npm start
+        wait-on: 'http://localhost:3000'
+        config: baseUrl=https://localhost:3000
