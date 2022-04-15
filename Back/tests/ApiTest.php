@@ -59,7 +59,7 @@ class ApiTest extends WebTestCase {
 
         $this->assertEquals($responseData, [
             "id" => 5,
-            "name" => "Jerry Smith",,
+            "name" => "Jerry Smith",
             "price" => $responseData["price"], // Get price randomized
             "quantity" => $responseData["quantity"], // Get quantity randomized
             "image" => "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
@@ -77,7 +77,7 @@ class ApiTest extends WebTestCase {
 
         $this->assertEquals($responseData, [
             "id" => 5,
-            "name" => "Jerry Smith",,
+            "name" => "Jerry Smith",
             "price" => $responseData["price"], // Get price randomized
             "quantity" => $responseData["quantity"], // Get quantity randomized
             "image" => "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
