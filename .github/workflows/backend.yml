@@ -28,11 +28,11 @@ jobs:
       - name: CD to Back project and install dependancies
         run: |
           cd Back
-          docker-compose up -d
-          docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d
+          docker-compose -f docker-compose.yml -f up -d
           docker-compose exec -T composer install
           docker-compose exec -T app php bin/phpunit
-          
+
+# docker-compose up -d   
 #          docker-compose exec -T app php bin/console doctrine:database:drop --force --env=test
 #          docker-compose exec -T app php bin/console doctrine:database:create --env=test
 #          docker-compose exec -T app php bin/console doctrine:migrations:migrate -n --env=test
