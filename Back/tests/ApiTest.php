@@ -79,8 +79,8 @@ class ApiTest extends WebTestCase {
         $client->jsonRequest('POST', '/api/products', [
             "id" => 5,
             "name" => "Jerry Smith",
-            "price" => $responseData["price"], // Get price randomized
-            "quantity" => $responseData["quantity"], // Get quantity randomized
+            "price" => "8", // Get price randomized
+            "quantity" => "30", // Get quantity randomized
             "image" => "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
         ]);
         $response = $client->getResponse();
