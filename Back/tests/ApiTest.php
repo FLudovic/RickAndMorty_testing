@@ -68,7 +68,13 @@ class ApiTest extends WebTestCase {
 
     public function testAddProduct() {
         $client = static::createClient();
-        $client->jsonRequest('POST', '/api/products', $this->dataGlobal);
+        $client->jsonRequest('POST', '/api/products', [
+            "id" => 5,
+            "name" => "Jerry Smith",
+            "price" => $responseData["price"], // Get price randomized
+            "quantity" => $responseData["quantity"], // Get quantity randomized
+            "image" => "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
+        ]);
         $response = $client->getResponse();
         $this->assertResponseIsSuccessful();
 
