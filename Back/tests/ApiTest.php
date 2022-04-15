@@ -90,7 +90,7 @@ class ApiTest extends WebTestCase {
         $responseData = json_decode($response->getContent(), true);
 
         $this->assertEquals($responseData, [
-            "id" => 5,
+            "id" => 21,
             "name" => "Jerry Smith",
             "price" => $responseData["price"], // Get price randomized
             "quantity" => $responseData["quantity"], // Get quantity randomized
