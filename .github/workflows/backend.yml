@@ -28,7 +28,7 @@ jobs:
       - name: CD to Back project and install dependancies
         run: |
           cd Back
-          apt-get update && apt-get install -y --no-install-recommends apt-utils
+          apt-get install apt-utils
           docker-compose build
           docker-compose up -d
           docker-compose exec -T container pwd && composer install && php bin/phpunit
