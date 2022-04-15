@@ -4,8 +4,7 @@ namespace App\Tests;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class ApiTest extends WebTestCase
-{
+class ApiTest extends WebTestCase {
     public function testApi(): void
     {
         $client = static::createClient();
@@ -27,4 +26,5 @@ class ApiTest extends WebTestCase
         $this->assertJson($response->getContent());
         $responseData = json_decode($response->getContent(), true);
         $this->assertEquals(['message' => "Hello"], $responseData);
+    }
 }

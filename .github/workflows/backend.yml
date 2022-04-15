@@ -1,20 +1,11 @@
-# This is a basic workflow to help you get started with Actions
-
 name: backend.yml
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 jobs:
   build-test:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
@@ -25,9 +16,25 @@ jobs:
           cd Back
           docker-compose build
           docker-compose up -d
+      - name: Docker PS
+        run: docker ps -a
+      - name: Installation Composer
+        run: |
+          cd Back
           docker-compose exec -T app bash
-          composer install
+          composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - name: Migration env=test
+        run: |
+          cd Back
           php bin/console doctrine:database:create --env=test
           php bin/console doctrine:migrations:migrate -n --env=test
+      - name: Doctrine
+        run: |
+          cd Back
+          docker-compose exec -T app bash
           php bin/console doctrine:fixtures:load -n --env=test
-          composer test
+      - name: Lancement des test
+        run: |
+          cd Back
+          docker-compose exec -T app bash
+          php bin/phpunit
