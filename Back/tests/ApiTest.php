@@ -42,7 +42,7 @@ class ApiTest extends WebTestCase {
 
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Check routes
+    // Check CRUD
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function testGetAllProducts() {
         $client = static::createClient();
@@ -96,6 +96,39 @@ class ApiTest extends WebTestCase {
             "quantity" => $responseData["quantity"], // Get quantity randomized
             "image" => "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
         ]);
+    }
+
+    public function testDeleteProduct()
+    {
+        $client = static::createClient();
+        $client->jsonRequest('DELETE', '/api/products/21');
+        $response = $client->getResponse();
+        $this->assertResponseIsSuccessful();
+
+        $this->assertJson($response->getContent());
+        $responseData = json_decode($response->getContent(), true);
+
+        $this->assertEquals($responseData, ['delete' => 'ok']);
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Check Basket CRUD
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public function testAddProductToCart()
+    {
+        $client = static::createClient();
+        $client->jsonRequest('POST', '/api/cart/5', [
+            "id" => 5,
+            "name" => "Jerry Smith",
+            "price" => "8", // Get price randomized
+            "quantity" => "30", // Get quantity randomized
+            "image" => "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
+        ]);
+        $response = $client->getResponse();
+        $this->assertResponseIsSuccessful();
+
+        $this->assertJson($response->getContent());
+        $responseData = json_decode($response->getContent(), true);
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
