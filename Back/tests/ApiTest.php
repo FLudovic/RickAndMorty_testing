@@ -6,6 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 // Import models to test them
 use App\Model\RickAndMortyModel;
 use App\Service\CreateRickAndMorty;
+// Get http response
+use Symfony\Component\HttpClient\MockHttpClient;
+use Symfony\Component\HttpClient\Response\MockResponse;
+use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class ApiTest extends WebTestCase {
     
